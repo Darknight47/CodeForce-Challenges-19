@@ -1,0 +1,47 @@
+"""
+
+---------------------------------------------- Link for the challenge: https://codeforces.com/problemset/problem/1754/B -----------------------------------------
+
+For his birthday, Kevin received the set of pairwise distinct numbers 1,2,3,…,n as a gift.
+
+He is going to arrange these numbers in a way such that the minimum absolute difference between two consecutive numbers be maximum possible. 
+More formally, if he arranges numbers in order p1,p2,…,pn, he wants to maximize the value
+mini=1n−1|pi+1−pi|,
+where |x| denotes the absolute value of x.
+
+Help Kevin to do that.
+
+Input
+Each test consists of multiple test cases. The first line contains a single integer t (1 ≤ t ≤ 100) — the number of test cases. Description of the test cases follows.
+
+The only line of each test case contains an integer n (2 ≤ n ≤ 1000) — the size of the set.
+
+Output
+For each test case print a single line containing n distinct integers p1,p2,…,pn (1 ≤ pi ≤ n) describing the arrangement that maximizes the minimum absolute difference of consecutive elements.
+
+Formally, you have to print a permutation p which maximizes the value mini=1n−1|pi+1−pi|.
+
+If there are multiple optimal solutions, print any of them.
+
+Input:
+2
+4
+3
+
+Output:
+2 4 1 3
+1 2 3
+"""
+cases = int(input())
+for _ in range(cases):
+    n = int(input())
+    firstHalf = list(range(1, (n//2) + 1))
+    secondHalf = list(range((n//2) + 1, n + 1))
+    second = True
+    for i in range(0, n//2):
+        print(secondHalf[i], end=' ')
+        print(firstHalf[i], end=' ')
+    if(n % 2 == 1):
+        print(secondHalf[-1])
+    else:
+        print()
