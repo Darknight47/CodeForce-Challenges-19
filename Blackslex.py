@@ -1,0 +1,35 @@
+"""
+
+-------------------------------------------- Link for the challenge: https://codeforces.com/problemset/problem/2179/A ----------------------------------------
+
+Blackslex is designing a log-in system for Gean Dev and discovered that most users use weak passwords.
+
+To resolve this issue, he posed the following conditions, dependent on two variables k and x, for all passwords. Each password is a string s of length n satisfying these properties.
+
+s uses only the first k lowercase letters of the English alphabet.
+For every pair of indices 1≤i<j≤n such that (j−i) is divisible by x, the letters si and sj are different.
+Find the smallest integer n such that no valid string of length n exists.
+
+Input
+The first line contains a single integer t (1 ≤ t ≤ 500) — the number of test cases.
+
+The first and only line of each test case contains two integers k and x (1 ≤ k ≤ 26, 1 ≤ x ≤ 15).
+
+Output
+For each test case, output the minimal n.
+
+Input:
+3
+2 1
+3 2
+1 5
+
+Output:
+3
+7
+6
+"""
+cases = int(input())
+for _ in range(cases):
+    k, x = map(int, input().split())
+    print((k * x) + 1)
